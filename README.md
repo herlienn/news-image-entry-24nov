@@ -4,21 +4,27 @@
 [![rank](https://make.fun/badge/news-image-20261124/herlienn/news-image-entry-24nov/rank.svg)](https://make.fun/bounty/news-image-20261124/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
 [![reward](https://make.fun/badge/news-image-20261124/herlienn/news-image-entry-24nov/reward.svg)](https://make.fun/bounty/news-image-20261124?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
 
-One image that sums up the world's news of Tuesday, 24 November 2026: 43 stories
-from 6 continents, drawn in code by a Node 22 program (standard library only)
-that writes `/output/entry.png`.
-
 Bounty: https://make.fun/bounty/news-image-20261124
 
-Built for the make.fun bounty "Sum up 24 November's world news in one image".
-My referral link: https://make.fun/r/4a84jcbk
+Make your own bounty on make.fun: https://make.fun/r/4a84jcbk
 
-## Run
+## What this is
+
+"Sum up 24 November's world news in one image" — a single 1024×1024 newspaper
+front page drawn entirely in code: **47 stories across 7 regions**, 3 large
+hero panels, 12 illustrated main stories, a full-width numbered-pin world map,
+a UTC timeline ("By the Clock"), "Day in Numbers", and a 32-item "Also on" list.
+
+## How it is built
+
+`main.ts` runs on Node 22 with the standard library only — no network, no
+dependencies. It writes one PNG to `/output/entry.png` (or
+`$MAKEFUN_OUTPUT_DIR/entry.png`). Every shape, scene, letter and map coastline
+is drawn with code; nothing is downloaded or copied. Two runs produce a
+byte-identical file.
+
+Run it:
 
 ```sh
-mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
+node main.ts
 ```
-
-The program draws the newspaper image deterministically (fixed seed, no
-network, no clock) and writes `entry.png` (1024x1024, under 1 MiB). Two runs
-produce byte-identical output.
